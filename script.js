@@ -27,18 +27,27 @@ const cuentaRegresiva = setInterval(() => {
     }
 }, 1000);
 
-// Confirmación de asistencia
+// Lista de integrantes
+const listaIntegrantes = [];
+
+// Función para agregar integrante
 function agregarIntegrante() {
     const nombre = document.getElementById("nombre").value;
     const edad = document.getElementById("edad").value;
     const restriccion = document.getElementById("restriccion").value;
     
     if (nombre && edad) {
-        const lista = document.getElementById("listaIntegrantes");
-        const item = document.createElement("li");
-        item.innerText = `${nombre} (Edad: ${edad}, Restricción: ${restriccion})`;
-        lista.appendChild(item);
-
+        const integrante = {
+            nombre: nombre,
+            edad: edad,
+            restriccion: restriccion
+        };
+        
+        // Agregar a la lista
+        listaIntegrantes.push(integrante);
+        mostrarIntegrantes();
+        
+        // Limpiar los campos
         document.getElementById("nombre").value = '';
         document.getElementById("edad").value = '';
         document.getElementById("restriccion").value = 'ninguna';
@@ -46,3 +55,26 @@ function agregarIntegrante() {
         alert("Por favor, completa todos los campos.");
     }
 }
+
+// Función para mostrar integrantes
+function mostrarIntegrantes() {
+    const lista = document.getElementById("listaIntegrantes");
+    lista.innerHTML = ''; // Limpiar la lista
+
+    listaIntegrantes.forEach((integrante, index) => {
+        const item = document.createElement("li");
+        item.innerText = ${integrante.nombre} (Edad: ${integrante.edad}, Restricción: ${integrante.restriccion});
+        lista.appendChild(item);
+    });
+}
+
+// Función para enviar confirmación
+function enviarConfirmacion() {
+    if (listaIntegrantes.length > 0) {
+        alert("Gracias por confirmar la asistencia de los siguientes integrantes:\n" +
+              listaIntegrantes.map(ing => ${ing.nombre} (Edad: ${ing.edad}, Restricción: ${ing.restriccion})).join("\n"));
+    } else {
+        alert("No hay integrantes confirmados.");
+    }
+}
+```
