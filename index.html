@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación de Boda</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="menu-hamburguesa" onclick="toggleMenu()">
+            ☰
+        </div>
+        <h1>Estás Invitado a la Boda de [Nombre Novio] y [Nombre Novia]</h1>
+        <audio controls autoplay loop>
+            <source src="musica-boda.mp3" type="audio/mpeg">
+            Tu navegador no soporta el audio.
+        </audio>
+    </header>
+
+    <nav id="menu" class="oculto">
+        <ul>
+            <li><a href="#detalles">Detalles</a></li>
+            <li><a href="#cuenta-regresiva">Cuenta Regresiva</a></li>
+            <li><a href="#confirmacion">Confirmación</a></li>
+            <li><a href="#mapa">Cómo Llegar</a></li>
+            <li><a href="#galeria">Galería</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="detalles">
+            <h2>Detalles de la Boda</h2>
+            <p><strong>Fecha:</strong> [2025-05-31]</p>
+            <p><strong>Hora:</strong> [12:30:00]</p>
+            <p><strong>Lugar:</strong> [Dirección del Lugar]</p>
+            <p><strong>Código de Vestimenta:</strong> Elegante</p>
+            <p><strong>Regalo:</strong> Agradeceremos cualquier detalle (alías)</p>
+        </section>
+
+        <section id="cuenta-regresiva">
+            <h2>Faltan para la Boda:</h2>
+            <div id="contador">
+                <span id="dias"></span> días 
+                <span id="horas"></span> horas 
+                <span id="minutos"></span> minutos 
+                <span id="segundos"></span> segundos 
+            </div>
+        </section>
+
+        <section id="galeria">
+            <h2>Galería de Fotos</h2>
+            <div id="fotos">
+                <img src="images/foto1.jpg" alt="Foto de los novios" class="foto-novios">
+                <img src="images/foto2.jpg" alt="Foto de los novios" class="foto-novios">
+            </div>
+        </section>
+
+        <section id="confirmacion">
+            <h2>Confirma tu Asistencia</h2>
+            <form id="formularioRSVP">
+                <div id="familia">
+                    <h3>Integrantes de la Familia</h3>
+                    <div>
+                        <label for="nombre">Nombre Completo:</label>
+                        <input type="text" id="nombre" required>
+                    </div>
+                    <div>
+                        <label for="edad">Edad:</label>
+                        <input type="number" id="edad" required>
+                    </div>
+                    <div>
+                        <label for="restriccion">Restricción Alimentaria:</label>
+                        <select id="restriccion">
+                            <option value="ninguna">Ninguna</option>
+                            <option value="celiaco">Celiaco</option>
+                            <option value="hipertenso">Hipertenso</option>
+                            <option value="vegetariano">Vegetariano</option>
+                            <option value="vegano">Vegano</option>
+                        </select>
+                    </div>
+                    <button type="button" onclick="agregarIntegrante()">Agregar Integrante</button>
+                </div>
+                <h3>Miembros Confirmados:</h3>
+                <ul id="listaIntegrantes"></ul>
+                <button type="submit">Enviar Confirmación</button>
+            </form>
+        </section>
+
+        <section id="mapa">
+            <h2>¿Cómo llegar?</h2>
+            <iframe id="mapaEmbed" src="https://www.google.com/maps/embed?pb=!1m18..."></iframe>
+        </section>
+    </main>
+
+    <footer>
+        <p>¡Estamos ansiosos por celebrar juntos!</p>
+        <p>Es muy importante para nosotros que confirmes tu asistencia hasta el [Fecha Límite].</p>
+    </footer>
+</body>
+</html>

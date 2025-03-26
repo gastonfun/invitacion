@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #cf7c7c;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.menu-hamburguesa {
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+nav {
+    background: #fff;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    width: 200px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    padding: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+nav.oculto {
+    display: none;
+}
+
+#contador {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+#mapaEmbed {
+    width: 100%;
+    height: 300px;
+    border: 0;
+}
+
+.foto-novios {
+    width: 45%;
+    margin: 5px;
+    transition: transform 0.2s;
+}
+
+.foto-novios:hover {
+    transform: scale(1.05);
+}
